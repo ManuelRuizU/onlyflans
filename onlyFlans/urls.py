@@ -1,4 +1,5 @@
 """
+urls.py
 URL configuration for onlyFlans project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -16,7 +17,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from webApp.views import inicio, nosotros, bienvenido
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', inicio, name='inicio'),
+    path('nosotros', nosotros, name='nosotros' ),
+    path('bienvenido', bienvenido, name='bienvenido' ),
+    
+    
 ]
