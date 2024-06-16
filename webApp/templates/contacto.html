@@ -1,0 +1,35 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
+                <div class="card-form" style="border: none;">
+                    <div class="card-body">
+                        <h2 class="text-center">Contactanos</h2>
+                        <hr>
+                        <form action="{% url 'contenido' tipo='contacto' %}" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="customer_name">Nombre:</label>
+                                {{ form.customer_name }}
+                            </div>
+                            <div class="form-group">
+                                <label for="customer_email">Correo:</label>
+                                {{ form.customer_email }}
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje:</label>
+                                {{ form.message }}
+                            </div>
+                            <button type="submit" class="btn btn-success float-right mt-2">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

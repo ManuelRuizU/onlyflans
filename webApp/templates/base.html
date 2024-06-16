@@ -1,0 +1,52 @@
+
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    {% include 'head.html' %}
+    {% endblock %}
+</head>
+<body>
+    {% load static %}
+
+    {% block header %}
+    {% include 'header.html' %}
+    {% endblock %}
+
+    <!-- Navbar -->
+    {% block navbar %}
+    {% include 'navbar.html' %}
+    {% endblock %}
+
+    {% block content %}
+    <div class="container">
+
+    </div>    
+    {% endblock %}
+
+
+    {% block modal %}
+    {% include 'modal.html' %}
+    {% include 'modal_2.html' %}
+    {% endblock %}
+
+    
+
+    <!-- Footer -->
+    {% block footer %}
+    {% include 'footer.html' %}
+    {% endblock %}
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+    <!-- Para modal.html -->
+<script src="{% static 'js/scripts_modal1.js' %}"></script>
+<!-- Para modal_2.html -->
+<script src="{% static 'js/scripts_modal2.js' %}"></script>
+
+
+</body>
+</html>

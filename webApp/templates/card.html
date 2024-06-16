@@ -1,0 +1,27 @@
+<!-- card.html -->
+{% load static %}
+
+{% block 'modal' %}
+{% include 'modal.html'  %}
+{% endblock  %}
+
+<div class="row">
+    {% for flan in lista_flanes %}
+    <div class="cardo col-sm-6 mt-4 mb-3" style="width: 16rem;">
+        <div class="card" style="width: 16rem;">
+            <img src="{{ flan.image_url }}" class="card-img-top img-container" alt="{{ flan.nombre }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ flan.nombre }}</h5>
+                <!-- Llama a la función showModal al hacer clic en el botón -->
+                <button type="button" class="btn btn-link" onclick="showModal('{{ flan.nombre }}', '{{ flan.descripcion }}', '{{ flan.precio_publico_general }}', '{{ flan.precio_publico_logueado|default:"No disponible" }}')">
+                    <i class="bi bi-info-circle"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+

@@ -1,0 +1,28 @@
+<!-- bienvenido.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+<header class="text-center">
+    <img src="{% static 'logo_white.png' %}" alt="logo onlyflans" class="img-fluid">
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">Este es el Bienvenido</h2>
+
+    {% block 'card2' %}
+    {% include 'card_2.html' %}
+    {% endblock  %}
+
+    {% block 'modal2' %}
+    {% include 'modal_2.html' %}
+    {% endblock  %}
+
+
+
+
+</div>
+{% endblock %}
+

@@ -1,0 +1,26 @@
+<!--login.html-->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
+            <div id="emailHelp" class="form-text">Ingresa tu correo electrónico</div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="acceptTerms" name="accept_terms" required>
+            <label class="form-check-label" for="acceptTerms">Acepta Términos y Condiciones</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+    </form>
+</div>
+{% endblock %}
+
+

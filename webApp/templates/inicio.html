@@ -1,0 +1,23 @@
+
+<!-- inicio.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">Este es el Inicio</h2>
+
+    {% block 'card' %}
+    {% include 'card.html' %}
+    {% endblock  %}
+
+    {% block 'modal' %}
+    {% include 'modal.html' %}
+    {% endblock  %}
+
+
+
+
+</div>
+{% endblock %}
+
