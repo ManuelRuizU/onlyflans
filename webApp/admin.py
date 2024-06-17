@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import flan
 
-# Register your models here.
+# Registra tu modelo aquí
+admin.site.register(flan)
