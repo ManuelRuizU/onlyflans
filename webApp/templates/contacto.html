@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <h2 class="text-center">Contactanos</h2>
                         <hr>
-                        <form action="{% url 'contenido' tipo='contacto' %}" method="post">
+                        <form action="{% url 'contacto' %}" method="post">
                             {% csrf_token %}
                             <div class="form-group">
                                 <label for="customer_name">Nombre:</label>

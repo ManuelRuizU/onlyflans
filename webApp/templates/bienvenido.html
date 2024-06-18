@@ -10,7 +10,7 @@
 
 {% block content %}
 <div class="container">
-    <h2 class="text-center">Este es el Bienvenido</h2>
+    <h2 class="text-center">Este es el Bienvenido {{ request.session.email }}</h2>
 
     {% block 'card2' %}
     {% include 'card_2.html' %}

@@ -1,0 +1,16 @@
+
+<!-- success.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container text-center">
+    <div class="exito">
+        <h1>¡Suscripción exitosa!</h1>
+        <p>Gracias por suscribirte a nuestro newsletter.</p>
+        
+        <!-- Botón para volver al inicio en una nueva pestaña -->
+        <a href="{% url 'inicio' %}" target="_blank" class="btn btn-primary">Volver al inicio</a>
+    </div>
+</div>
+{% endblock %}

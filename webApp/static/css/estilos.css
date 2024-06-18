@@ -9,6 +9,10 @@ body {
     background-color: #FF5F5D;
 }
 
+.exito {
+    font-family: "Roboto", sans-serif;
+    background-color: #ccdae0;
+}
 
 .cardo {
     padding: 0;
