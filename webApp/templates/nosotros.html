@@ -1,10 +1,48 @@
+<!--nosotros.html-->
 
 {% extends "base.html" %}
-
+{% load static %}
 
 {% block content %}
-<h2 class="text-center">
-  Este es el nosotros
-</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h2 class="text-center mb-4">Nosotros</h2>
 
-    {% endblock%}
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <img src="{% static 'img/nosotros.jpg' %}" class="img-fluid rounded" alt="Nosotros">
+                </div>
+                <div class="col-md-6">
+                    <h3>Nuestra Historia</h3>
+                    <p>OnlyFlans nace de la pasión por la repostería y el deseo de ofrecer los flanes más deliciosos y únicos. Desde nuestros inicios, nos hemos dedicado a combinar ingredientes frescos y sabores auténticos para crear experiencias gastronómicas memorables.</p>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <h3>Nuestra Misión</h3>
+                    <p>En OnlyFlans nos esforzamos por deleitar a nuestros clientes con cada bocado. Nuestra misión es ofrecer productos de alta calidad, atención personalizada y una experiencia de compra excepcional que celebre la buena comida y la creatividad en la cocina.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="{% static 'img/mision.jpg' %}" class="img-fluid rounded" alt="Misión">
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <img src="{% static 'img/team.jpg' %}" class="img-fluid rounded" alt="Equipo">
+                </div>
+                <div class="col-md-6">
+                    <h3>Nuestro Equipo</h3>
+                    <p>Nuestro equipo está formado por apasionados del mundo de la repostería, comprometidos con la calidad y la innovación. Juntos, trabajamos para crear los flanes más exquisitos y garantizar que cada cliente tenga una experiencia única y satisfactoria.</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p>Visítanos y descubre por qué OnlyFlans es más que una pastelería. Estamos aquí para compartir nuestra pasión por los flanes artesanales y para hacer que cada momento dulce sea memorable.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
