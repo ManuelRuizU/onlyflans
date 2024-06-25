@@ -1,15 +1,40 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Subscribe to Newsletter</title>
-</head>
-<body>
-    <h1>Subscribe to our Newsletter</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Subscribe</button>
-    </form>
-</body>
-</html>
+<!--subscribe.html-->
+ <!-- Formulario -->
+         <section class="">
+            <form action="{% url 'subscribe' %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <!--Grid row-->
+                <div class="row d-flex justify-content-center">
+                    <!--Grid column-->
+                    <div class="col-auto">
+                        <p class="pt-2">
+                            <strong>Suscríbete a nuestro newsletter</strong>
+                        </p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-5 col-12">
+                        <!-- Email input -->
+                        <div data-mdb-input-init class="form-outline mb-4">
+                            <input type="email" id="formnewslatter" name="email" class="form-control border-primary border-1" placeholder="Ingresa tu correo electrónico" required>
+                            <label class="form-label" for="formnewslatter"></label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-auto">
+                        <!-- Submit button -->
+                        <button data-mdb-ripple-init type="submit" class="btn btn-outline-primary mb-4">
+                            Suscríbete
+                        </button>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </form>
+        </section>
+        <!-- Formulario -->

@@ -1,8 +1,7 @@
-
-    <!-- Footer.html -->
-    <footer class="bg-footer bg-body-tertiarys text-center">
-        <!-- Grid container -->
-        <div class="container p-4 text-center">
+<!-- footer.html -->
+<footer class="bg-footer bg-body-tertiarys text-center">
+    <!-- Grid container -->
+    <div class="container p-4 text-center">
         <!-- Section: Social media -->
         <section class="mb-4">
             <!-- Facebook -->
@@ -28,54 +27,18 @@
         </section>
         <!-- Section: Social media -->
 
-         <!-- Formulario -->
-         <section class="">
-            <form action="{% url 'subscribe' %}" method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <!--Grid row-->
-                <div class="row d-flex justify-content-center">
-                    <!--Grid column-->
-                    <div class="col-auto">
-                        <p class="pt-2">
-                            <strong>Suscríbete a nuestro newsletter</strong>
-                        </p>
-                    </div>
-                    <!--Grid column-->
+        {% block subscribe %}
+        {% include 'subscribe.html' %}
+        {% endblock %}
 
-                    <!--Grid column-->
-                    <div class="col-md-5 col-12">
-                        <!-- Email input -->
-                        <div data-mdb-input-init class="form-outline mb-4">
-                            <input type="email" id="formnewslatter" name="email" class="form-control border-primary border-1" placeholder="Ingresa tu correo electrónico" required>
-                            <label class="form-label" for="formnewslatter"></label>
-                        </div>
-                    </div>
-                    <!--Grid column-->
+    </div>
+    <!-- Grid container -->
 
-                    <!--Grid column-->
-                    <div class="col-auto">
-                        <!-- Submit button -->
-                        <button data-mdb-ripple-init type="submit" class="btn btn-outline-primary mb-4">
-                            Suscríbete
-                        </button>
-                    </div>
-                    <!--Grid column-->
-                </div>
-                <!--Grid row-->
-            </form>
-        </section>
-        <!-- Formulario -->
-
-            </div>
-            <!-- Grid container -->
-
-                <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-                <p>&copy; 2024 OnlyFlans. Todos los derechos reservados.</p>
-                <a class="text-reset fw-bold link-underline  link-underline-opacity-0" href="#">onlyflans.com</a>
-            </div>
-                <!-- Copyright -->
-        </footer>
-            <!-- Footer -->
-            
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        <p>&copy; 2024 OnlyFlans. Todos los derechos reservados.</p>
+        <a class="text-reset fw-bold link-underline  link-underline-opacity-0" href="#">onlyflans.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->

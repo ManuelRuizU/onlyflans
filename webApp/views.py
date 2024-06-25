@@ -1,9 +1,15 @@
 # views.py
 from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
 from .models import flan
 from .models import ContactForm
 from .forms import ContactFormForm
 from .forms import SuscripcionForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout as auth_logout
+
+
 
 # Create your views here.
 def inicio(request):
@@ -16,16 +22,25 @@ def inicio(request):
 def nosotros(request):
     return render(request, "nosotros.html", {})
 
+@login_required
 def bienvenido(request):
     flanes_privados = flan.objects.filter(is_prived=True)
+    
+  # Obtener el nombre de usuario
+    nombre_usuario = request.user.username
+
+    # Personalizar el mensaje de bienvenida
+    mensaje_bienvenida = f"¡Hola, {nombre_usuario}! Has iniciado sesión correctamente."
+
     context = {
-        "lista_flanes": flanes_privados
+        "lista_flanes": flanes_privados,
+        "mensaje_bienvenida": mensaje_bienvenida
     }
     return render(request, "bienvenido.html", context)
 
-def login(request):
+def login_view(request):
     if request.method == "GET":
-        return render(request, "login.html", {})  
+        return render(request, "registration/login.html", {})  
     if request.method == "POST":
         email = request.POST.get('email')  
         password = request.POST.get('password')  
@@ -33,6 +48,26 @@ def login(request):
         request.session["email"] = email  
         
         return redirect("bienvenido")
+    
+def logout_view(request):
+    auth_logout(request)
+    return redirect("inicio")
+
+
+
+def registro(request):
+    if request.method == "POST":
+        username=request.POST["username"]
+        email=request.POST["email"]
+        password=request.POST["password"]
+        
+        user = User.objects.create_user(username, email, password)
+        
+        # Actualizar campos y luego guardar nuevamente
+        user.first_name = request.POST["first_name"]
+        user.last_name = request.POST["last_name"]
+        user.save()
+    return redirect("/login")
 
 def contacto(request):
     if request.method == 'POST':
@@ -62,6 +97,7 @@ def subscribe(request):
     else:
         form = SuscripcionForm()
     return render(request, 'subscribe.html', {'form': form})
+
 
 def success(request):
     return render(request, 'success.html')

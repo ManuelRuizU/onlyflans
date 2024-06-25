@@ -16,18 +16,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from webApp.views import inicio, nosotros, bienvenido,contacto, login, subscribe, success
+from django.urls import include, path
+from webApp.views import inicio, nosotros, bienvenido,contacto, login_view,logout_view, registro, subscribe, success
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', inicio, name='inicio'),
+    path('inicio/', inicio, name='inicio'),
     path('nosotros/', nosotros, name='nosotros' ),
     path('bienvenido/', bienvenido, name='bienvenido' ),
     path('contacto/', contacto, name='contacto' ),
-    path('login/', login, name='login' ),
-    path('subscribe/', subscribe, name='subscribe'),
-    path('success/', success, name='success'),
+    path('login/', login_view, name='login' ), # loguearse
+    path('logout/', logout_view, name='logout' ),
+    path('registro/', registro, name='registro' ),
+    path('subscribe/', subscribe, name='subscribe'), #formulario newslatter
+    path('success/', success, name='success'), # /mensaje de recibido o suscrito correctamente
+    path('accounts/', include ('django.contrib.auth.urls')),
+    path('', RedirectView.as_view(url='inicio/', permanent=True)),  # Redirigir la URL raíz a 'inicio/'
     
     
 ]
