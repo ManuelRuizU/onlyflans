@@ -1,17 +1,30 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    background-color: #ccdae0;
+    background-color: #98ff98;
     
 }
 
 .bg-body-tertiarys {
-    background-color: #FF5F5D;
+    background-color: #705643;
 }
+
+.navbar-brand, .nav-link, .dropdown-item {
+    color: #98ff98; 
+}
+
+.text-mint-green {
+    color: #98ff98 !important;
+}
+.btn-outline-mint-green  {
+    color: #98ff98 !important;
+}
+
+
 
 .exito {
     font-family: "Roboto", sans-serif;
-    background-color: #ccdae0;
+    background-color: #90EE90;
 }
 
 .cardo {
@@ -40,12 +53,12 @@ body {
 
 .bi-info-circle {
     font-size: 24px;
-    color: #00CCBF;
+    color: #705643;
 }
 
 .cardo:hover, .cardo.touch-active  {
     cursor: pointer;
-    border-color: #00CCBF;
+    border-color: #705643;
     transform: scale(1.05);
 }
 

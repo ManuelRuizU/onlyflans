@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,6 +125,16 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+JAZZMIN_SETTINGS = {
+    # ... otras configuraciones de Jazzmin
+    "SIDEBAR_LOGO": {
+        "HREF": "static/logo_black.png",  # URL del enlace del logo
+        "NAME": "Tu aplicación Django",  # Texto alternativo del logo
+        "CLASS": "sidebar-logo",  # Clase CSS para el logo (opcional)
+    },
+}
+
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/bienvenido'
